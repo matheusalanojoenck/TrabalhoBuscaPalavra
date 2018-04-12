@@ -19,10 +19,9 @@ public class BuscaPalavras {
     public static void main(String[] args) {
         menu = new Menu();
         
-        Cronometro.setInicio(System.currentTimeMillis());
+        Cronometro.inicia();
         LerArquivo.setTextoCompleto();
-        Cronometro.setFim(System.currentTimeMillis());
-        menu.setDuracaoLeitura(Cronometro.getDuracao());
+        menu.setDuracaoLeitura(Long.toString(Cronometro.fim()));
         menu.setVisible(true);        
     }
     

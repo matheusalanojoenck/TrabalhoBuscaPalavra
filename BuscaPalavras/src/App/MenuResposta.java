@@ -98,10 +98,9 @@ public class MenuResposta extends javax.swing.JFrame {
     
     private void busca(SearchStrategy tipoBusca, String tituloBusca){
         setLabelTitulo(tituloBusca);
-        Cronometro.setInicio(System.currentTimeMillis());
+        Cronometro.inicia();
         resultado = tipoBusca.execute(LerArquivo.getTextoCompleto(),Menu.getCampoPalavraChave());
-        Cronometro.setFim(System.currentTimeMillis());
-        duracaoBusca.setText(Cronometro.getDuracao());
+        duracaoBusca.setText(Long.toString(Cronometro.fim()));
         setRespostaBusca(resultado);  
     }
 

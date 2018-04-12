@@ -10,18 +10,15 @@ package buscapalavras;
  * @author matheus
  */
 public class Cronometro {
-    private static long inicio, fim;
+    private static long inicio;
 
-    public static void setInicio(long inicio) {
-        Cronometro.inicio = inicio;
-    }
-
-    public static void setFim(long fim) {
-        Cronometro.fim = fim;
+    
+    public static void inicia(){
+        inicio = System.currentTimeMillis();
     }
     
-    public static String getDuracao(){
-        return Long.toString(fim-inicio)+" milissegundos";
+    public static long fim(){
+        return (System.currentTimeMillis())-inicio;
     }
     
 }
