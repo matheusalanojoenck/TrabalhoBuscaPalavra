@@ -17,10 +17,11 @@ public class MenuResposta extends javax.swing.JFrame {
     /**;
      * Creates new form MenuResposta
      * @param tipoBusca
+     * @param tituloBusca
      */
-    public MenuResposta(String tipoBusca) {
+    public MenuResposta(SearchStrategy tipoBusca, String tituloBusca) {
         initComponents();
-        iniciaBusca(tipoBusca);
+        busca(tipoBusca, tituloBusca);
     }
 
     /**
@@ -94,35 +95,9 @@ public class MenuResposta extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void iniciaBusca(String tipoBusca){
- 
-        switch(tipoBusca){
-            case "naive":
-                setLabelTitulo("Naive");
-                NaiveBusca naive = new NaiveBusca();
-                busca(naive);
-            break;
-            case "rabin":
-                setLabelTitulo("Rabin Karp");                
-                RabinKarpBusca rabin = new RabinKarpBusca();
-                busca(rabin);
-            break;
-            case "kmp":
-                setLabelTitulo("Knuth Morris Part");
-                KnuthMorrisPartBusca kmp = new KnuthMorrisPartBusca();
-                busca(kmp);
-            break;
-            case "boyer":
-                setLabelTitulo("Boyer Moore");
-                BoyerMooreBusca boyer = new BoyerMooreBusca();
-                busca(boyer);
-            break;
-        }
-                
-    }
     
-    private void busca(SearchStrategy tipoBusca){
+    private void busca(SearchStrategy tipoBusca, String tituloBusca){
+        setLabelTitulo(tituloBusca);
         Cronometro.setInicio(System.currentTimeMillis());
         resultado = tipoBusca.execute(LerArquivo.getTextoCompleto(),Menu.getCampoPalavraChave());
         Cronometro.setFim(System.currentTimeMillis());
@@ -130,7 +105,7 @@ public class MenuResposta extends javax.swing.JFrame {
         setRespostaBusca(resultado);  
     }
 
-    public void setLabelTitulo(String labelTitulo) {
+    private void setLabelTitulo(String labelTitulo) {
         this.labelTitulo.setText(labelTitulo);
     }
     

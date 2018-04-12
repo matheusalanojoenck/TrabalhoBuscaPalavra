@@ -150,19 +150,23 @@ public class Menu extends javax.swing.JFrame {
     }
     
     private void botaoBoyerMooreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBoyerMooreActionPerformed
-        new MenuResposta("boyer").setVisible(true);
+        SearchStrategy boyer = new BoyerMooreBusca();
+        new MenuResposta(boyer, "Boyer Moore").setVisible(true);
     }//GEN-LAST:event_botaoBoyerMooreActionPerformed
 
     private void botaoKMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoKMPActionPerformed
-        new MenuResposta("kmp").setVisible(true);
+        SearchStrategy kmp = new KnuthMorrisPartBusca();
+        new MenuResposta(kmp, "Knuth Morris Part").setVisible(true);
     }//GEN-LAST:event_botaoKMPActionPerformed
 
     private void botaoRabinKarpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRabinKarpActionPerformed
-        new MenuResposta("rabin").setVisible(true);
+        SearchStrategy rabin = new RabinKarpBusca();
+        new MenuResposta(rabin, "Rabin Karp").setVisible(true);
     }//GEN-LAST:event_botaoRabinKarpActionPerformed
 
     private void botaoNaiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNaiveActionPerformed
-        new MenuResposta("naive").setVisible(true);
+        SearchStrategy naive = new NaiveBusca();
+        new MenuResposta(naive, "Naive").setVisible(true);
         
     }//GEN-LAST:event_botaoNaiveActionPerformed
     
