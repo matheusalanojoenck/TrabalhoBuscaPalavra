@@ -12,5 +12,7 @@ import java.util.ArrayList;
  * @author udesc
  */
 public abstract class SearchStrategy {
+        private String nome;
         public abstract boolean execute(ArrayList<String> textoArray, String palavra);
+        public abstract String getNome();
 }

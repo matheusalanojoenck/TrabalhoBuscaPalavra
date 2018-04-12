@@ -13,12 +13,19 @@ import java.util.ArrayList;
  */
 public class NaiveBusca extends SearchStrategy {
     
+    private static final String nome = "Naive";
+
+    public String getNome() {
+        return nome;
+    }
+    
     /**
      *
      * @param textoArray
      * @param palavra
      * @return
      */
+    
     @Override
     public boolean execute(ArrayList<String> textoArray, String palavra){
         for(String texto : textoArray){

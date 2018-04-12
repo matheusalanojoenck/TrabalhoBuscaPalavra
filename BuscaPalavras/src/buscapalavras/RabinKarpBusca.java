@@ -21,6 +21,12 @@ public class RabinKarpBusca extends SearchStrategy{
     private long q;
     private int r;
     private long rm;
+    
+    private static final String nome = "Rabin Karp";
+
+    public String getNome() {
+        return nome;
+    }
 
     /**
      *

@@ -14,6 +14,12 @@ import java.util.ArrayList;
 public class BoyerMooreBusca extends SearchStrategy{
     
     
+    private static final String nome = "Boyer Moore";
+
+    public String getNome() {
+        return nome;
+    }
+    
     /**
      *
      * @param textoArray

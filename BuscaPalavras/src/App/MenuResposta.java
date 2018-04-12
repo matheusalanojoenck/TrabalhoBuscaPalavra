@@ -21,7 +21,7 @@ public class MenuResposta extends javax.swing.JFrame {
      */
     public MenuResposta(SearchStrategy tipoBusca, String tituloBusca) {
         initComponents();
-        busca(tipoBusca, tituloBusca);
+        busca(tipoBusca);
     }
 
     /**
@@ -96,11 +96,11 @@ public class MenuResposta extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
-    private void busca(SearchStrategy tipoBusca, String tituloBusca){
-        setLabelTitulo(tituloBusca);
+    private void busca(SearchStrategy tipoBusca){
+        setLabelTitulo(tipoBusca.getNome());
         Cronometro.inicia();
         resultado = tipoBusca.execute(LerArquivo.getTextoCompleto(),Menu.getCampoPalavraChave());
-        duracaoBusca.setText(Long.toString(Cronometro.fim()));
+        duracaoBusca.setText(Long.toString(Cronometro.fim())+" milissegeundos");
         setRespostaBusca(resultado);  
     }
 

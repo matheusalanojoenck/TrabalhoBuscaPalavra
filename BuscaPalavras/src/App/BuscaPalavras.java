@@ -21,8 +21,7 @@ public class BuscaPalavras {
         
         Cronometro.inicia();
         LerArquivo.setTextoCompleto();
-        menu.setDuracaoLeitura(Long.toString(Cronometro.fim()));
+        menu.setDuracaoLeitura(Long.toString(Cronometro.fim())+" milissegundos");
         menu.setVisible(true);        
     }
-    
 }

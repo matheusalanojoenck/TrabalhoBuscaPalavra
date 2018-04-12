@@ -12,6 +12,14 @@ import java.util.ArrayList;
  * @author matheus
  */
 public class KnuthMorrisPartBusca extends SearchStrategy{
+    
+    
+    
+    private static final String nome = "Knuth Morris Part";
+
+    public String getNome() {
+        return nome;
+    }
 
     /**
      *
