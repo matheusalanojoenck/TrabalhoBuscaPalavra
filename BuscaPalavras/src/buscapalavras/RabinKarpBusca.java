@@ -41,9 +41,7 @@ public class RabinKarpBusca extends SearchStrategy{
                 rm = (r * rm) % q;
             }
             palavraHash = hash(palavra, m);
-            if(search(texto) == -1){
-                return false;
-            }else{
+            if(search(texto) != -1){
                 return true;
             }             
         }

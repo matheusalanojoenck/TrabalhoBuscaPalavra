@@ -5,6 +5,8 @@
  */
 package App;
 
+import buscapalavras.*;
+
 /**
  *
  * @author matheus

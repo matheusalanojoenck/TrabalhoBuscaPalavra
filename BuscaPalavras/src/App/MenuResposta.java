@@ -5,19 +5,15 @@
  */
 package App;
 
-import buscapalavras.Cronometro;
-import buscapalavras.LerArquivo;
-import buscapalavras.NaiveBusca;
-import buscapalavras.RabinKarpBusca;
+import buscapalavras.*;
+
 
 /**
  *
  * @author udesc
  */
 public class MenuResposta extends javax.swing.JFrame {
-      
-//    NaiveBusca naive;
-
+    private boolean resultado=false;
     /**;
      * Creates new form MenuResposta
      * @param tipoBusca
@@ -100,40 +96,38 @@ public class MenuResposta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void iniciaBusca(String tipoBusca){
-
-        boolean resultado=false;
-        
+ 
         switch(tipoBusca){
             case "naive":
                 setLabelTitulo("Naive");
                 NaiveBusca naive = new NaiveBusca();
-                Cronometro.setInicio(System.currentTimeMillis());
-                resultado = naive.execute(LerArquivo.getTextoCompleto(),Menu.getCampoPalavraChave());
-                Cronometro.setFim(System.currentTimeMillis());
-                duracaoBusca.setText(Cronometro.getDuracao());
-                
-                setRespostaBusca(resultado);
+                busca(naive);
             break;
             case "rabin":
-                setLabelTitulo("Rabin Karp");
+                setLabelTitulo("Rabin Karp");                
                 RabinKarpBusca rabin = new RabinKarpBusca();
-                Cronometro.setInicio(System.currentTimeMillis());
-                resultado = rabin.execute(LerArquivo.getTextoCompleto(),Menu.getCampoPalavraChave());
-                Cronometro.setFim(System.currentTimeMillis());
-                duracaoBusca.setText(Cronometro.getDuracao());
-                
-                setRespostaBusca(resultado);             
+                busca(rabin);
             break;
             case "kmp":
                 setLabelTitulo("Knuth Morris Part");
-                setRespostaBusca(resultado);
+                KnuthMorrisPartBusca kmp = new KnuthMorrisPartBusca();
+                busca(kmp);
             break;
             case "boyer":
                 setLabelTitulo("Boyer Moore");
-                setRespostaBusca(resultado);
+                BoyerMooreBusca boyer = new BoyerMooreBusca();
+                busca(boyer);
             break;
         }
                 
+    }
+    
+    private void busca(SearchStrategy tipoBusca){
+        Cronometro.setInicio(System.currentTimeMillis());
+        resultado = tipoBusca.execute(LerArquivo.getTextoCompleto(),Menu.getCampoPalavraChave());
+        Cronometro.setFim(System.currentTimeMillis());
+        duracaoBusca.setText(Cronometro.getDuracao());
+        setRespostaBusca(resultado);  
     }
 
     public void setLabelTitulo(String labelTitulo) {

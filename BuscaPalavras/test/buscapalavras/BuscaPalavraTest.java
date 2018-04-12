@@ -5,10 +5,7 @@
  */
 package buscapalavras;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -40,11 +37,15 @@ public class BuscaPalavraTest {
      */
     @Test
     public void testexecute() {
-        assertEquals(true, naive.execute(LerArquivo.getTextoCompleto(), "way"));
-        assertEquals(false, naive.execute(LerArquivo.getTextoCompleto(), "matheus"));
-        assertEquals(false, kmp.execute(LerArquivo.getTextoCompleto(), ""));
-        assertEquals(false, boyer.execute(LerArquivo.getTextoCompleto(), ""));
-        assertEquals(false, rabin.execute(LerArquivo.getTextoCompleto(), ""));
+        assertEquals(true, naive.execute(LerArquivo.getTextoCompleto(), "WAY"));
+        assertEquals(false, naive.execute(LerArquivo.getTextoCompleto(), "MATHEUS"));
+        assertEquals(true, rabin.execute(LerArquivo.getTextoCompleto(), "WAY"));
+        assertEquals(false, rabin.execute(LerArquivo.getTextoCompleto(), "MATHEUS"));
+        assertEquals(true, kmp.execute(LerArquivo.getTextoCompleto(), "WAY"));
+        assertEquals(false, kmp.execute(LerArquivo.getTextoCompleto(), "MATHEUS"));
+        assertEquals(true, boyer.execute(LerArquivo.getTextoCompleto(), "WAY"));
+        assertEquals(false, boyer.execute(LerArquivo.getTextoCompleto(), "MATHEUS"));
+        
 
     }
     

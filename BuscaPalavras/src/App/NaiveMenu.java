@@ -106,7 +106,7 @@ public class NaiveMenu extends javax.swing.JFrame {
         if(resultado){
             respostaBusca.setText("Palavra encontrada");
         }else{
-            respostaBusca.setText("Palavra não encontrada");
+            respostaBusca.setText("Palavra ksjhdgkjsdh");
 
         }
     }
