@@ -13,12 +13,9 @@ import java.util.ArrayList;
  */
 public class NaiveBusca extends SearchStrategy {
     
-    private static final String nome = "Naive";
-
-    public String getNome() {
-        return nome;
-    }
-    
+    private final String nome = "Naive";
+    private boolean resultado = false;
+    private int quantidade = 0;
     /**
      *
      * @param textoArray
@@ -41,11 +38,21 @@ public class NaiveBusca extends SearchStrategy {
                 }
 
                 if(j==tamanhoPalavra){
-                    return true;
+                    quantidade++;
+                    resultado = true;
                 }
             }
         }
-        return false;
-        
+        return resultado;
+    }
+    
+    @Override
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public int getQuantidade() {
+        return quantidade;
     }
 }

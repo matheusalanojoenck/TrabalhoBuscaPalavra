@@ -13,13 +13,9 @@ import java.util.ArrayList;
  */
 public class KnuthMorrisPartBusca extends SearchStrategy{
     
-    
-    
-    private static final String nome = "Knuth Morris Part";
-
-    public String getNome() {
-        return nome;
-    }
+    private final String nome = "Knuth Morris Part";
+    private boolean resultado = false;
+    private int quantidade = 0;
 
     /**
      *
@@ -32,10 +28,11 @@ public class KnuthMorrisPartBusca extends SearchStrategy{
         for(String texto : textoArray){
             
             if(KMP(texto, palavra) != -1){
-                return true;
+                quantidade++;
+                resultado = true;
             }
          }
-        return false;
+        return resultado;
     }
     
     
@@ -94,5 +91,15 @@ public class KnuthMorrisPartBusca extends SearchStrategy{
     }
     return table;
   }
+    
+    @Override
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public int getQuantidade() {
+       return quantidade;
+    }
     
 }

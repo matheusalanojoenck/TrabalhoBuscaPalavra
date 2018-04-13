@@ -13,6 +13,9 @@ import java.util.ArrayList;
  */
 public abstract class SearchStrategy {
         private String nome;
+        private int quantidade;
         public abstract boolean execute(ArrayList<String> textoArray, String palavra);
         public abstract String getNome();
+        public abstract int getQuantidade();
+        
 }

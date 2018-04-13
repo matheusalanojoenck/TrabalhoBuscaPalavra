@@ -38,6 +38,7 @@ public class Menu extends javax.swing.JFrame {
         labelTitulo = new javax.swing.JLabel();
         duracaoLeitura = new javax.swing.JLabel();
         labelTempoDuracao = new javax.swing.JLabel();
+        botaoAhoCorasick = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +79,13 @@ public class Menu extends javax.swing.JFrame {
 
         labelTempoDuracao.setText("Tempo de leitura:");
 
+        botaoAhoCorasick.setText("Aho-Corasick");
+        botaoAhoCorasick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoAhoCorasickActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,24 +93,26 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelPlavraChave)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(campoPalavraChave)
-                                    .addComponent(botaoNaive, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(botaoRabinKarp, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoKMP, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoBoyerMoore, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelTempoDuracao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(duracaoLeitura))))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(labelTitulo)))
+                        .addComponent(labelTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(botaoAhoCorasick, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(labelPlavraChave)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(campoPalavraChave)
+                                        .addComponent(botaoNaive, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(botaoRabinKarp, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(botaoKMP, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(botaoBoyerMoore, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(labelTempoDuracao)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(duracaoLeitura))))))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -114,23 +124,20 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoPalavraChave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelPlavraChave))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(botaoNaive)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoRabinKarp)
-                        .addGap(7, 7, 7)
-                        .addComponent(botaoKMP)
-                        .addGap(7, 7, 7)
-                        .addComponent(botaoBoyerMoore)
-                        .addGap(0, 43, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelTempoDuracao)
-                            .addComponent(duracaoLeitura))
-                        .addContainerGap())))
+                .addGap(18, 18, 18)
+                .addComponent(botaoNaive)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoRabinKarp)
+                .addGap(7, 7, 7)
+                .addComponent(botaoKMP)
+                .addGap(7, 7, 7)
+                .addComponent(botaoBoyerMoore)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoAhoCorasick)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTempoDuracao)
+                    .addComponent(duracaoLeitura)))
         );
 
         pack();
@@ -151,27 +158,32 @@ public class Menu extends javax.swing.JFrame {
     
     private void botaoBoyerMooreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBoyerMooreActionPerformed
         SearchStrategy boyer = new BoyerMooreBusca();
-        new MenuResposta(boyer, "Boyer Moore").setVisible(true);
+        new MenuResposta(boyer).setVisible(true);
     }//GEN-LAST:event_botaoBoyerMooreActionPerformed
 
     private void botaoKMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoKMPActionPerformed
         SearchStrategy kmp = new KnuthMorrisPartBusca();
-        new MenuResposta(kmp, "Knuth Morris Part").setVisible(true);
+        new MenuResposta(kmp).setVisible(true);
     }//GEN-LAST:event_botaoKMPActionPerformed
 
     private void botaoRabinKarpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRabinKarpActionPerformed
         SearchStrategy rabin = new RabinKarpBusca();
-        new MenuResposta(rabin, "Rabin Karp").setVisible(true);
+        new MenuResposta(rabin).setVisible(true);
     }//GEN-LAST:event_botaoRabinKarpActionPerformed
 
     private void botaoNaiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNaiveActionPerformed
         SearchStrategy naive = new NaiveBusca();
-        new MenuResposta(naive, "Naive").setVisible(true);
+        new MenuResposta(naive).setVisible(true);
         
     }//GEN-LAST:event_botaoNaiveActionPerformed
+
+    private void botaoAhoCorasickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAhoCorasickActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoAhoCorasickActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoAhoCorasick;
     private javax.swing.JButton botaoBoyerMoore;
     private javax.swing.JButton botaoKMP;
     private javax.swing.JButton botaoNaive;

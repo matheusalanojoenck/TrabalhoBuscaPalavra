@@ -22,11 +22,9 @@ public class RabinKarpBusca extends SearchStrategy{
     private int r;
     private long rm;
     
-    private static final String nome = "Rabin Karp";
-
-    public String getNome() {
-        return nome;
-    }
+    private final String nome = "Rabin Karp";
+    private boolean resultado = false;
+    private int quantidade = 0;
 
     /**
      *
@@ -48,10 +46,11 @@ public class RabinKarpBusca extends SearchStrategy{
             }
             palavraHash = hash(palavra, m);
             if(search(texto) != -1){
-                return true;
+                quantidade++;
+                resultado = true;
             }             
         }
-        return false;
+        return resultado;
     }
     
     private long hash(String palavra, int m){
@@ -95,5 +94,15 @@ public class RabinKarpBusca extends SearchStrategy{
     private static long longRandomPrime(){
         BigInteger prime = BigInteger.probablePrime(31, new SecureRandom());
         return prime.longValue();
+    }
+    
+    @Override
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public int getQuantidade() {
+        return quantidade;
     }
 }

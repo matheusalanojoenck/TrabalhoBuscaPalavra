@@ -7,19 +7,17 @@ package App;
 
 import buscapalavras.*;
 
-
 /**
  *
  * @author udesc
  */
 public class MenuResposta extends javax.swing.JFrame {
-    private boolean resultado=false;
+    private boolean resultado;
     /**;
      * Creates new form MenuResposta
      * @param tipoBusca
-     * @param tituloBusca
      */
-    public MenuResposta(SearchStrategy tipoBusca, String tituloBusca) {
+    public MenuResposta(SearchStrategy tipoBusca) {
         initComponents();
         busca(tipoBusca);
     }
@@ -38,6 +36,8 @@ public class MenuResposta extends javax.swing.JFrame {
         duracaoBusca = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
         botaoVoltar = new javax.swing.JButton();
+        labelQuantidade = new javax.swing.JLabel();
+        quantidade = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +51,7 @@ public class MenuResposta extends javax.swing.JFrame {
         duracaoBusca.setText("duracaoBusca");
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelTitulo.setText("algo");
+        labelTitulo.setText("Título");
 
         botaoVoltar.setText("Voltar");
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +59,12 @@ public class MenuResposta extends javax.swing.JFrame {
                 botaoVoltarActionPerformed(evt);
             }
         });
+
+        labelQuantidade.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelQuantidade.setText("Quantidade: ");
+
+        quantidade.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        quantidade.setText("resposta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,11 +75,16 @@ public class MenuResposta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(labelTitulo)
                     .addComponent(respostaBusca)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelDuracao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(duracaoBusca))
-                    .addComponent(botaoVoltar))
+                    .addComponent(botaoVoltar)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(labelQuantidade)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(quantidade))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(labelDuracao)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(duracaoBusca))))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,7 +94,11 @@ public class MenuResposta extends javax.swing.JFrame {
                 .addComponent(labelTitulo)
                 .addGap(49, 49, 49)
                 .addComponent(respostaBusca)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelQuantidade)
+                    .addComponent(quantidade))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDuracao)
                     .addComponent(duracaoBusca))
@@ -101,7 +116,8 @@ public class MenuResposta extends javax.swing.JFrame {
         Cronometro.inicia();
         resultado = tipoBusca.execute(LerArquivo.getTextoCompleto(),Menu.getCampoPalavraChave());
         duracaoBusca.setText(Long.toString(Cronometro.fim())+" milissegeundos");
-        setRespostaBusca(resultado);  
+        setRespostaBusca(resultado); 
+        setQuantidade(tipoBusca.getQuantidade());
     }
 
     private void setLabelTitulo(String labelTitulo) {
@@ -113,10 +129,13 @@ public class MenuResposta extends javax.swing.JFrame {
             respostaBusca.setText("Palavra encontrada");
         }else{
             respostaBusca.setText("Palavra não encontrada");
-
         }
     }
-    
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade.setText(Integer.toString(quantidade));
+    }
+  
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
@@ -126,7 +145,9 @@ public class MenuResposta extends javax.swing.JFrame {
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel duracaoBusca;
     private javax.swing.JLabel labelDuracao;
+    private javax.swing.JLabel labelQuantidade;
     private javax.swing.JLabel labelTitulo;
+    private javax.swing.JLabel quantidade;
     private javax.swing.JLabel respostaBusca;
     // End of variables declaration//GEN-END:variables
 }

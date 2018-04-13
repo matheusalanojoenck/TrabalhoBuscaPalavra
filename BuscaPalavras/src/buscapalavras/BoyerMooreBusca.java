@@ -12,13 +12,10 @@ import java.util.ArrayList;
  * @author matheus
  */
 public class BoyerMooreBusca extends SearchStrategy{
-    
-    
-    private static final String nome = "Boyer Moore";
 
-    public String getNome() {
-        return nome;
-    }
+    private final String nome = "Boyer Moore";
+    private int quantidade = 0;
+    private boolean resultado = false;
     
     /**
      *
@@ -26,21 +23,16 @@ public class BoyerMooreBusca extends SearchStrategy{
      * @param palavra
      * @return
      */
+    @Override
     public boolean execute(ArrayList<String> textoArray, String palavra){
-         for(String texto : textoArray){
-             
-             char[] c_arr = texto.toCharArray();
-             char[] c_array = palavra.toCharArray();
-             
-             
-             if(indexOf(c_arr, c_array) != -1){
-                return true;
+        textoArray.stream().map((texto) -> texto.toCharArray()).forEachOrdered((c_arr) -> {
+            char[] c_array = palavra.toCharArray();
+            if (indexOf(c_arr, c_array) != -1) {
+                quantidade++;
+                resultado = true;
             }
-//             else{
-//                return true;
-//            }  
-         }
-        return false;
+        });
+        return resultado;
     }
     
      public static int indexOf(char[] haystack, char[] needle) {
@@ -118,5 +110,14 @@ public class BoyerMooreBusca extends SearchStrategy{
         }
         return len;
     }
-    
+
+    @Override
+    public String getNome() {
+         return nome;
+    }
+
+    @Override
+    public int getQuantidade() {
+        return quantidade;
+    }
 }
