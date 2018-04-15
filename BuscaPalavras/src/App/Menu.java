@@ -41,6 +41,7 @@ public class Menu extends javax.swing.JFrame {
         botaoAhoCorasick = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Busca Palavra");
 
         botaoNaive.setText("Naive");
         botaoNaive.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +163,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoBoyerMooreActionPerformed
 
     private void botaoKMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoKMPActionPerformed
-        SearchStrategy kmp = new KnuthMorrisPartBusca();
+        SearchStrategy kmp = new KnuthMorrisPrattBusca();
         new MenuResposta(kmp).setVisible(true);
     }//GEN-LAST:event_botaoKMPActionPerformed
 

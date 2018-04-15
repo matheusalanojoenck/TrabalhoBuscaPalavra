@@ -17,5 +17,6 @@ public abstract class SearchStrategy {
         public abstract boolean execute(ArrayList<String> textoArray, String palavra);
         public abstract String getNome();
         public abstract int getQuantidade();
+        public abstract void setQuantidade();
         
 }

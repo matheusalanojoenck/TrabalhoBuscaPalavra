@@ -17,7 +17,6 @@ import javax.swing.JOptionPane;
  */
 public class LerArquivo {
 //    private static final HashMap<String,String> conteudo = new HashMap<>();
-    //private static final StringBuilder textoDeTodosArquivos = new StringBuilder();
     private static final ArrayList<String> textoCompletoArray = new ArrayList();
     private static final ArrayList<String> nomeArquivos = new ArrayList();
     
@@ -85,10 +84,9 @@ public class LerArquivo {
                 
                 while ((linha=lerArq.readLine()) != null) {  
                     textoDoArquivo.append(linha);
-                    textoDoArquivo.append("\n");
+                    textoDoArquivo.append(" ");//não pode ser '\n', pois os algoritmos não encontram sentenças de duas ou mais linhas 
                 }
                 textoCompletoArray.add(textoDoArquivo.toString().toUpperCase());
-                //textoDeTodosArquivos.append(textoDoArquivo);
                 lerArq.close();
                 
             } catch (IOException e) {

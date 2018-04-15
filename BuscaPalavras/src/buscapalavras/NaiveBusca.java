@@ -14,8 +14,9 @@ import java.util.ArrayList;
 public class NaiveBusca extends SearchStrategy {
     
     private final String nome = "Naive";
-    private boolean resultado = false;
+    private boolean resultado;
     private int quantidade = 0;
+    
     /**
      *
      * @param textoArray
@@ -25,6 +26,7 @@ public class NaiveBusca extends SearchStrategy {
     
     @Override
     public boolean execute(ArrayList<String> textoArray, String palavra){
+        resultado = false;
         for(String texto : textoArray){
             int tamanhoTexto = texto.length();
             int tamanhoPalavra = palavra.length();
@@ -33,14 +35,16 @@ public class NaiveBusca extends SearchStrategy {
                 int j;
 
                 for (j = 0; j < tamanhoPalavra; j++) {
-                    if(texto.charAt(i+j) != palavra.charAt(j))
+                    if(texto.charAt(i+j) != palavra.charAt(j)){
                         break;
+                    }
                 }
 
                 if(j==tamanhoPalavra){
-                    quantidade++;
                     resultado = true;
+                    setQuantidade();
                 }
+                
             }
         }
         return resultado;
@@ -54,5 +58,10 @@ public class NaiveBusca extends SearchStrategy {
     @Override
     public int getQuantidade() {
         return quantidade;
+    }
+
+    @Override
+    public void setQuantidade() {
+        quantidade++;
     }
 }

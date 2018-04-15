@@ -15,7 +15,7 @@ public class BoyerMooreBusca extends SearchStrategy{
 
     private final String nome = "Boyer Moore";
     private int quantidade = 0;
-    private boolean resultado = false;
+    private boolean resultado;
     
     /**
      *
@@ -25,17 +25,21 @@ public class BoyerMooreBusca extends SearchStrategy{
      */
     @Override
     public boolean execute(ArrayList<String> textoArray, String palavra){
-        textoArray.stream().map((texto) -> texto.toCharArray()).forEachOrdered((c_arr) -> {
+        resultado = false;
+        for(String texto : textoArray){
+             
+            char[] c_arr = texto.toCharArray();
             char[] c_array = palavra.toCharArray();
-            if (indexOf(c_arr, c_array) != -1) {
-                quantidade++;
+
+            if(indexOf(c_arr, c_array) != 0){
                 resultado = true;
-            }
-        });
+            }  
+         }
+        
         return resultado;
     }
     
-     public static int indexOf(char[] haystack, char[] needle) {
+     private int indexOf(char[] haystack, char[] needle) {
         if (needle.length == 0) {
             return 0;
         }
@@ -44,19 +48,21 @@ public class BoyerMooreBusca extends SearchStrategy{
         for (int i = needle.length - 1, j; i < haystack.length;) {
             for (j = needle.length - 1; needle[j] == haystack[i]; --i, --j) {
                 if (j == 0) {
-                    return i;
+                    setQuantidade();
+                    break;
+                    //return i;
                 }
             }
             // i += needle.length - j; // For naive method
             i += Math.max(offsetTable[needle.length - 1 - j], charTable[haystack[i]]);
         }
-        return -1;
+        return getQuantidade();
     }
 
     /**
      * Makes the jump table based on the mismatched character information.
      */
-    private static int[] makeCharTable(char[] needle) {
+    private int[] makeCharTable(char[] needle) {
         final int ALPHABET_SIZE = 256;
         int[] table = new int[ALPHABET_SIZE];
         for (int i = 0; i < table.length; ++i) {
@@ -71,7 +77,7 @@ public class BoyerMooreBusca extends SearchStrategy{
     /**
      * Makes the jump table based on the scan offset which mismatch occurs.
      */
-    private static int[] makeOffsetTable(char[] needle) {
+    private int[] makeOffsetTable(char[] needle) {
         int[] table = new int[needle.length];
         int lastPrefixPosition = needle.length;
         for (int i = needle.length - 1; i >= 0; --i) {
@@ -90,7 +96,7 @@ public class BoyerMooreBusca extends SearchStrategy{
     /**
      * Is needle[p:end] a prefix of needle?
      */
-    private static boolean isPrefix(char[] needle, int p) {
+    private boolean isPrefix(char[] needle, int p) {
         for (int i = p, j = 0; i < needle.length; ++i, ++j) {
             if (needle[i] != needle[j]) {
                 return false;
@@ -102,7 +108,7 @@ public class BoyerMooreBusca extends SearchStrategy{
     /**
      * Returns the maximum length of the substring ends at p and is a suffix.
      */
-    private static int suffixLength(char[] needle, int p) {
+    private int suffixLength(char[] needle, int p) {
         int len = 0;
         for (int i = p, j = needle.length - 1;
                  i >= 0 && needle[i] == needle[j]; --i, --j) {
@@ -119,5 +125,10 @@ public class BoyerMooreBusca extends SearchStrategy{
     @Override
     public int getQuantidade() {
         return quantidade;
+    }
+
+    @Override
+    public void setQuantidade() {
+        quantidade++;
     }
 }

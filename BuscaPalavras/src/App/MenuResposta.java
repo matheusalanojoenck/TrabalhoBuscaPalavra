@@ -5,7 +5,9 @@
  */
 package App;
 
-import buscapalavras.*;
+import buscapalavras.Cronometro;
+import buscapalavras.LerArquivo;
+import buscapalavras.SearchStrategy;
 
 /**
  *
@@ -40,6 +42,7 @@ public class MenuResposta extends javax.swing.JFrame {
         quantidade = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Busca Palavra - Resultado");
 
         respostaBusca.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         respostaBusca.setText("<Aguardando busca>");
@@ -114,7 +117,7 @@ public class MenuResposta extends javax.swing.JFrame {
         setLabelTitulo(tipoBusca.getNome());
         Cronometro.inicia();
         resultado = tipoBusca.execute(LerArquivo.getTextoCompleto(),Menu.getCampoPalavraChave());
-        duracaoBusca.setText(Long.toString(Cronometro.fim())+" milissegeundos");
+        duracaoBusca.setText(Long.toString(Cronometro.fim())+" milissegundos");
         setRespostaBusca(resultado); 
         setQuantidade(tipoBusca.getQuantidade());
     }
@@ -124,7 +127,7 @@ public class MenuResposta extends javax.swing.JFrame {
     }
     
     private void setRespostaBusca(boolean resultado) {
-        if(resultado){
+        if(resultado==true){
             respostaBusca.setText("Palavra encontrada");
         }else{
             respostaBusca.setText("Palavra não encontrada");

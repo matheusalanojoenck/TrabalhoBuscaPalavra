@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/matheus/Documents/GitHub/TrabalhoBuscaPalavra/BuscaPalavras/src/buscapalavras/AhoCorasickBusca.java</file>
+            <file>file:/C:/Users/matheus/Documents/GitHub/TrabalhoBuscaPalavra/BuscaPalavras/src/buscapalavras/BoyerMooreBusca.java</file>
             <file>file:/C:/Users/matheus/Documents/GitHub/TrabalhoBuscaPalavra/BuscaPalavras/src/App/Menu.java</file>
-            <file>file:/C:/Users/matheus/Documents/GitHub/TrabalhoBuscaPalavra/BuscaPalavras/src/buscapalavras/NaiveBusca.java</file>
+            <file>file:/C:/Users/matheus/Documents/GitHub/TrabalhoBuscaPalavra/BuscaPalavras/src/buscapalavras/RabinKarpBusca.java</file>
+            <file>file:/C:/Users/matheus/Documents/GitHub/TrabalhoBuscaPalavra/BuscaPalavras/src/buscapalavras/KnuthMorrisPartBusca.java</file>
             <file>file:/C:/Users/matheus/Documents/GitHub/TrabalhoBuscaPalavra/BuscaPalavras/src/App/MenuResposta.java</file>
+            <file>file:/C:/Users/matheus/Documents/GitHub/TrabalhoBuscaPalavra/BuscaPalavras/test/buscapalavras/BuscaPalavraTest.java</file>
         </group>
     </open-files>
 </project-private>

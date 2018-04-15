@@ -23,7 +23,7 @@ public class RabinKarpBusca extends SearchStrategy{
     private long rm;
     
     private final String nome = "Rabin Karp";
-    private boolean resultado = false;
+    private boolean resultado;
     private int quantidade = 0;
 
     /**
@@ -35,6 +35,7 @@ public class RabinKarpBusca extends SearchStrategy{
     
     @Override
     public boolean execute(ArrayList<String> textoArray, String palavra){
+        resultado = false;
         for(String texto : textoArray){
             this.palavra = palavra;
             r = 256;
@@ -45,8 +46,7 @@ public class RabinKarpBusca extends SearchStrategy{
                 rm = (r * rm) % q;
             }
             palavraHash = hash(palavra, m);
-            if(search(texto) != -1){
-                quantidade++;
+            if(search(texto) != 0){
                 resultado = true;
             }             
         }
@@ -73,11 +73,12 @@ public class RabinKarpBusca extends SearchStrategy{
     private int search(String texto){
         int n = texto.length();
         if( n < m){
-            return n;
+            return 0;
         }
         long textoHash = hash(texto, m);
         if((palavraHash == textoHash) && check(texto, 0)){
-            return 0;
+            setQuantidade();
+            //return 0;
         }
         for (int i = m; i < n; i++) {
             textoHash = (textoHash + q - rm * texto.charAt(i - m) % q) % q;
@@ -85,13 +86,14 @@ public class RabinKarpBusca extends SearchStrategy{
             
             int offset = i - m + 1;
             if((palavraHash == textoHash) && check(texto, offset)){
-                return offset;
+                setQuantidade();
+                //return offset;
             }
         }
-        return -1;
+        return getQuantidade();
     }
     
-    private static long longRandomPrime(){
+    private long longRandomPrime(){
         BigInteger prime = BigInteger.probablePrime(31, new SecureRandom());
         return prime.longValue();
     }
@@ -104,5 +106,10 @@ public class RabinKarpBusca extends SearchStrategy{
     @Override
     public int getQuantidade() {
         return quantidade;
+    }
+
+    @Override
+    public void setQuantidade() {
+        quantidade++;
     }
 }

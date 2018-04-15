@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class AhoCorasickBusca extends SearchStrategy {
     
-    private final String nome = "Aho Corasick";
+    private final String nome = "Aho-Corasick";
     private boolean resultado = false;
     private int quantidade = 0;
 
@@ -33,6 +33,11 @@ public class AhoCorasickBusca extends SearchStrategy {
     @Override
     public int getQuantidade() {
         return quantidade;
+    }
+
+    @Override
+    public void setQuantidade() {
+        quantidade++;
     }
     
 }
