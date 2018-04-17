@@ -22,7 +22,7 @@ public class AhoCorasickBusca extends SearchStrategy {
         for(String texto: textoArray){
             
         }
-        return false;
+        return resultado;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class AhoCorasickBusca extends SearchStrategy {
     }
 
     @Override
-    public void setQuantidade() {
+    protected void setQuantidade() {
         quantidade++;
     }
     

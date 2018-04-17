@@ -109,7 +109,7 @@ public class RabinKarpBusca extends SearchStrategy{
     }
 
     @Override
-    public void setQuantidade() {
+    protected void setQuantidade() {
         quantidade++;
     }
 }

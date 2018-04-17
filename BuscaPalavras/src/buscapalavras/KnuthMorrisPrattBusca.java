@@ -77,7 +77,7 @@ public class KnuthMorrisPrattBusca extends SearchStrategy{
     }
 
     @Override
-    public void setQuantidade() {
+    protected void setQuantidade() {
         quantidade++;
     }
     

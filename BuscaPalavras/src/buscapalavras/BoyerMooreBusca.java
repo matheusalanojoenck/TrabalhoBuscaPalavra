@@ -128,7 +128,7 @@ public class BoyerMooreBusca extends SearchStrategy{
     }
 
     @Override
-    public void setQuantidade() {
+    protected void setQuantidade() {
         quantidade++;
     }
 }

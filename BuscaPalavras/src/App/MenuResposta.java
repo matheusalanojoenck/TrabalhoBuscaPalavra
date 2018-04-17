@@ -142,7 +142,6 @@ public class MenuResposta extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel duracaoBusca;

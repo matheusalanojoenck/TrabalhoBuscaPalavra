@@ -61,7 +61,7 @@ public class NaiveBusca extends SearchStrategy {
     }
 
     @Override
-    public void setQuantidade() {
+    protected void setQuantidade() {
         quantidade++;
     }
 }
