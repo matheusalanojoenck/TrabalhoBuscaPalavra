@@ -27,7 +27,7 @@ public class RabinKarpBuscaTest {
      */
     @Test
     public void testExecuteCase1() {
-        assertTrue(rabin.execute(LerArquivo.getTextoCompleto(), "way".toUpperCase()));
+        assertEquals(true, rabin.execute(LerArquivo.getTextoCompleto(), "way".toUpperCase()));
     }
     
     /**
@@ -35,7 +35,7 @@ public class RabinKarpBuscaTest {
      */
     @Test
     public void testExecuteCase2() {
-        assertTrue(rabin.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of Rossillion".toUpperCase()));
+        assertEquals(true, rabin.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of Rossillion".toUpperCase()));
     }
     
     /**
@@ -43,7 +43,7 @@ public class RabinKarpBuscaTest {
      */
     @Test
     public void testExecuteCase3() {
-        assertTrue(rabin.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of Rossillion BERTRAM, Count of Rossillion".toUpperCase()));
+        assertEquals(true, rabin.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of Rossillion BERTRAM, Count of Rossillion".toUpperCase()));
     }
     
     
@@ -52,7 +52,7 @@ public class RabinKarpBuscaTest {
      */
     @Test
     public void testExecuteCase4(){
-        assertFalse(rabin.execute(LerArquivo.getTextoCompleto(), "NãoEncontra".toUpperCase()));
+        assertEquals(false, rabin.execute(LerArquivo.getTextoCompleto(), "NãoEncontra".toUpperCase()));
     }
     
     /**
@@ -60,7 +60,7 @@ public class RabinKarpBuscaTest {
      */
     @Test
     public void testExecuteCase5(){
-        assertFalse(rabin.execute(LerArquivo.getTextoCompleto(), "Não deve encontra".toUpperCase()));
+        assertEquals(false, rabin.execute(LerArquivo.getTextoCompleto(), "Não deve encontra".toUpperCase()));
     }
     
     /**
@@ -68,6 +68,6 @@ public class RabinKarpBuscaTest {
      */
     @Test
     public void testExecuteCase6(){
-        assertFalse(rabin.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of RossillionX".toUpperCase()));
+        assertEquals(false, rabin.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of RossillionX".toUpperCase()));
     }
 }

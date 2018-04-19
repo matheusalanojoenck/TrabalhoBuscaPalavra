@@ -27,7 +27,7 @@ public class KnuthMorrisPrattBuscaTest {
      */
     @Test
     public void testExecuteCase1() {
-        assertTrue(kmp.execute(LerArquivo.getTextoCompleto(), "way".toUpperCase()));
+        assertEquals(true, kmp.execute(LerArquivo.getTextoCompleto(), "way".toUpperCase()));
     }
     
     /**
@@ -35,7 +35,7 @@ public class KnuthMorrisPrattBuscaTest {
      */
     @Test
     public void testExecuteCase2() {
-        assertTrue(kmp.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of Rossillion".toUpperCase()));
+        assertEquals(true, kmp.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of Rossillion".toUpperCase()));
     }
     
     /**
@@ -43,7 +43,7 @@ public class KnuthMorrisPrattBuscaTest {
      */
     @Test
     public void testExecuteCase3() {
-        assertTrue(kmp.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of Rossillion BERTRAM, Count of Rossillion".toUpperCase()));
+        assertEquals(true, kmp.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of Rossillion BERTRAM, Count of Rossillion".toUpperCase()));
     }
     
     
@@ -52,7 +52,7 @@ public class KnuthMorrisPrattBuscaTest {
      */
     @Test
     public void testExecuteCase4(){
-        assertFalse(kmp.execute(LerArquivo.getTextoCompleto(), "NãoEncontra".toUpperCase()));
+        assertEquals(false, kmp.execute(LerArquivo.getTextoCompleto(), "NãoEncontra".toUpperCase()));
     }
     
     /**
@@ -60,7 +60,7 @@ public class KnuthMorrisPrattBuscaTest {
      */
     @Test
     public void testExecuteCase5(){
-        assertFalse(kmp.execute(LerArquivo.getTextoCompleto(), "Não deve encontra".toUpperCase()));
+        assertEquals(false, kmp.execute(LerArquivo.getTextoCompleto(), "Não deve encontra".toUpperCase()));
     }
     
     /**
@@ -68,7 +68,7 @@ public class KnuthMorrisPrattBuscaTest {
      */
     @Test
     public void testExecuteCase6(){
-        assertFalse(kmp.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of RossillionX".toUpperCase()));
+        assertEquals(false, kmp.execute(LerArquivo.getTextoCompleto(), "HELEN, a gentlewoman of RossillionX".toUpperCase()));
     }
     
 }

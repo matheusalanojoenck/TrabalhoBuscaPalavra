@@ -179,7 +179,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoNaiveActionPerformed
 
     private void botaoAhoCorasickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAhoCorasickActionPerformed
-        SearchStrategy aho = new AhoCorasickBusca(100000);
+        SearchStrategy aho = new AhoCorasickBusca();
         new MenuResposta(aho).setVisible(true);
     }//GEN-LAST:event_botaoAhoCorasickActionPerformed
     
