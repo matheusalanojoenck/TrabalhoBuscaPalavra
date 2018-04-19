@@ -27,7 +27,7 @@ public class KnuthMorrisPrattBuscaTest {
      */
     @Test
     public void testExecuteCase1() {
-        assertTrue(kmp.execute(LerArquivo.getTextoCompleto(), "way ".toUpperCase()));
+        assertTrue(kmp.execute(LerArquivo.getTextoCompleto(), "way".toUpperCase()));
     }
     
     /**

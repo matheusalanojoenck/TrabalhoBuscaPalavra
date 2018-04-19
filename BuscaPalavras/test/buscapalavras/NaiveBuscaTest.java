@@ -27,7 +27,7 @@ public class NaiveBuscaTest {
      */
     @Test
     public void testExecuteCase1() {
-        assertTrue(naive.execute(LerArquivo.getTextoCompleto(), "way ".toUpperCase()));
+        assertTrue(naive.execute(LerArquivo.getTextoCompleto(), "way".toUpperCase()));
     }
     
     /**

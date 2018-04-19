@@ -27,7 +27,7 @@ public class RabinKarpBuscaTest {
      */
     @Test
     public void testExecuteCase1() {
-        assertTrue(rabin.execute(LerArquivo.getTextoCompleto(), "way ".toUpperCase()));
+        assertTrue(rabin.execute(LerArquivo.getTextoCompleto(), "way".toUpperCase()));
     }
     
     /**

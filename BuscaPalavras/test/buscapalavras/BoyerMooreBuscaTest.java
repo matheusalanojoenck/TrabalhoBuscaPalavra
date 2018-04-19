@@ -27,7 +27,7 @@ public class BoyerMooreBuscaTest {
      */
     @Test
     public void testExecuteCase1() {
-        assertTrue(boyer.execute(LerArquivo.getTextoCompleto(), "way ".toUpperCase()));
+        assertTrue(boyer.execute(LerArquivo.getTextoCompleto(), "way".toUpperCase()));
     }
     
     /**
