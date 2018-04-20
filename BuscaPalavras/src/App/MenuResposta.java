@@ -15,6 +15,7 @@ import buscapalavras.SearchStrategy;
  */
 public class MenuResposta extends javax.swing.JFrame {
     private boolean resultado;
+    
     /**;
      * Creates new form MenuResposta
      * @param tipoBusca
@@ -113,6 +114,10 @@ public class MenuResposta extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
+    /**
+     * Inicia o algoritmo de procura baseado no tipo de busca.
+     * @param tipoBusca 
+     */
     private void busca(SearchStrategy tipoBusca){
         setLabelTitulo(tipoBusca.getNome());
         Cronometro.inicia();
@@ -121,11 +126,20 @@ public class MenuResposta extends javax.swing.JFrame {
         setRespostaBusca(resultado); 
         setQuantidade(tipoBusca.getQuantidade());
     }
-
+    
+    
+    /**
+     * Define o título de acordo com o tipo de busca.
+     * @param labelTitulo 
+     */
     private void setLabelTitulo(String labelTitulo) {
         this.labelTitulo.setText(labelTitulo);
     }
     
+    /**
+     * Difine o label referente a resposta da busca, encotrou ou não encontrou.
+     * @param resultado 
+     */
     private void setRespostaBusca(boolean resultado) {
         if(resultado==true){
             respostaBusca.setText("Palavra encontrada");
@@ -134,7 +148,11 @@ public class MenuResposta extends javax.swing.JFrame {
         }
     }
 
-    public void setQuantidade(int quantidade) {
+    /**
+     * Define o label referente a quantidade de palavras encontradas.
+     * @param quantidade
+     */
+    private void setQuantidade(int quantidade) {
         this.quantidade.setText(Integer.toString(quantidade));
     }
   

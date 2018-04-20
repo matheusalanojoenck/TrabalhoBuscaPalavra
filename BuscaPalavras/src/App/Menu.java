@@ -146,13 +146,18 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     /**
-     * 
+     * Define o tempo de execução do tempo de leitura dos arquivos.
+     * Recebe o tempo gerado pela classe Cronometro.
      * @param duracaoLeitura
      */
     public void setDuracaoLeitura(String duracaoLeitura) {
         this.duracaoLeitura.setText(duracaoLeitura);
     }
 
+    /**
+     * Retorna o conteúdo do campo de texto(campoPalavraChave) em forma de String. 
+     * @return campoPalavraChave.getText().toUpperCase()
+     */
     public static String getCampoPalavraChave() {
         return campoPalavraChave.getText().toUpperCase();
     }

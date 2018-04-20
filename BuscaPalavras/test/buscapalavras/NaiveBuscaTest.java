@@ -52,7 +52,7 @@ public class NaiveBuscaTest {
      */
     @Test
     public void testExecuteCase4(){
-        assertEquals(false, naive.execute(LerArquivo.getTextoCompleto(), "NãoEncontra".toUpperCase()));
+        assertEquals(false, naive.execute(LerArquivo.getTextoCompleto(), "NãoEncontrar".toUpperCase()));
     }
     
     /**
@@ -60,7 +60,7 @@ public class NaiveBuscaTest {
      */
     @Test
     public void testExecuteCase5(){
-        assertEquals(false, naive.execute(LerArquivo.getTextoCompleto(), "Não deve encontra".toUpperCase()));
+        assertEquals(false, naive.execute(LerArquivo.getTextoCompleto(), "Não deve encontrar".toUpperCase()));
     }
     
     /**

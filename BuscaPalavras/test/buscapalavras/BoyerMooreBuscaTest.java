@@ -52,7 +52,7 @@ public class BoyerMooreBuscaTest {
      */
     @Test
     public void testExecuteCase4(){
-        assertEquals(false, boyer.execute(LerArquivo.getTextoCompleto(), "NãoEncontra".toUpperCase()));
+        assertEquals(false, boyer.execute(LerArquivo.getTextoCompleto(), "NãoEncontrar".toUpperCase()));
     }
     
     /**
@@ -60,7 +60,7 @@ public class BoyerMooreBuscaTest {
      */
     @Test
     public void testExecuteCase5(){
-        assertEquals(false, boyer.execute(LerArquivo.getTextoCompleto(), "Não deve encontra".toUpperCase()));
+        assertEquals(false, boyer.execute(LerArquivo.getTextoCompleto(), "Não deve encontrar".toUpperCase()));
     }
     
     /**
