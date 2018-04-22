@@ -44,6 +44,7 @@ public class MenuResposta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Busca Palavra - Resultado");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         respostaBusca.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         respostaBusca.setText("<Aguardando busca>");
@@ -158,6 +159,7 @@ public class MenuResposta extends javax.swing.JFrame {
   
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         this.dispose();
+        BuscaPalavras.menu.setVisible(true);
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

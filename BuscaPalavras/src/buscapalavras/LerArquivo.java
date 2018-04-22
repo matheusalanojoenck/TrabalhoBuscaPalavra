@@ -21,7 +21,7 @@ public class LerArquivo {
     private static final ArrayList<String> nomeArquivos = new ArrayList();
     
     /**
-     * 
+     * ArrayList contendo o nome dos arquivos a serem abertos.
      */
     private static void inciaString(){
         // conteudo.put("1H4.txt", "");
@@ -70,7 +70,7 @@ public class LerArquivo {
     }
     
     /**
-     *
+     * Lê os arquivos e os adicona em um ArrayList
      */
     public static void setTextoCompleto(){
         inciaString();
@@ -96,8 +96,8 @@ public class LerArquivo {
     }
 
     /**
-     *
-     * @return textoCompleto
+     * Retorna o ArrayList contendo o texto completo
+     * @return textoCompleto 
      */
     public static ArrayList<String> getTextoCompleto(){
         return textoCompletoArray;

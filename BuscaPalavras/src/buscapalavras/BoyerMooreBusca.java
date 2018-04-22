@@ -18,10 +18,11 @@ public class BoyerMooreBusca extends SearchStrategy{
     private boolean resultado;
     
     /**
-     *
-     * @param textoArray
-     * @param palavra
-     * @return
+     * Inicia a estratégia de busca.
+     * @param textoArray texto em que vai ocorrer a busca.
+     * @param palavra termo a ser procurado no texto.
+     * @return true, se encontrou a String palavra dentro do ArryList textoArray,
+     *         se não false
      */
     @Override
     public boolean execute(ArrayList<String> textoArray, String palavra){
@@ -116,17 +117,28 @@ public class BoyerMooreBusca extends SearchStrategy{
         }
         return len;
     }
-
+    
+    /**
+     * Retorna o nome do tipo da estratégia usada.
+     * @return nome
+     */
     @Override
     public String getNome() {
          return nome;
     }
 
+    /**
+     * Retorna a quantidade de termos encontrados
+     * @return quantidade
+     */
     @Override
     public int getQuantidade() {
         return quantidade;
     }
 
+    /**
+     * Soma mais 1 (um) a variável quantaide;
+     */
     @Override
     protected void setQuantidade() {
         quantidade++;

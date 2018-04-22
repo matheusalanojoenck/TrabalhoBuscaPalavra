@@ -163,32 +163,35 @@ public class Menu extends javax.swing.JFrame {
     }
     
     private void botaoBoyerMooreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBoyerMooreActionPerformed
-        SearchStrategy boyer = new BoyerMooreBusca();
-        new MenuResposta(boyer).setVisible(true);
+        //SearchStrategy boyer = new BoyerMooreBusca();
+        new MenuResposta(new BoyerMooreBusca()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botaoBoyerMooreActionPerformed
 
     private void botaoKMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoKMPActionPerformed
-        SearchStrategy kmp = new KnuthMorrisPrattBusca();
-        new MenuResposta(kmp).setVisible(true);
+        //SearchStrategy kmp = new KnuthMorrisPrattBusca();
+        new MenuResposta(new KnuthMorrisPrattBusca()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botaoKMPActionPerformed
 
     private void botaoRabinKarpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRabinKarpActionPerformed
-        SearchStrategy rabin = new RabinKarpBusca();
-        new MenuResposta(rabin).setVisible(true);
+        //SearchStrategy rabin = new RabinKarpBusca();
+        new MenuResposta(new RabinKarpBusca()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botaoRabinKarpActionPerformed
 
     private void botaoNaiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNaiveActionPerformed
-        SearchStrategy naive = new NaiveBusca();
-        new MenuResposta(naive).setVisible(true);
-        
+        //SearchStrategy naive = new NaiveBusca();
+        new MenuResposta(new NaiveBusca()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botaoNaiveActionPerformed
 
     private void botaoAhoCorasickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAhoCorasickActionPerformed
-        SearchStrategy aho = new AhoCorasickBusca();
-        new MenuResposta(aho).setVisible(true);
+        //SearchStrategy aho = new AhoCorasickBusca();
+        new MenuResposta(new AhoCorasickBusca()).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botaoAhoCorasickActionPerformed
     
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAhoCorasick;
     private javax.swing.JButton botaoBoyerMoore;

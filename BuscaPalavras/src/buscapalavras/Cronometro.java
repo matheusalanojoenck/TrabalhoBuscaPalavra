@@ -12,11 +12,17 @@ package buscapalavras;
 public class Cronometro {
     private static long inicio;
 
-    
+    /**
+     * Pega o tempo atual do sistema em milissegundos e atribui a uma variável.
+     */
     public static void inicia(){
         inicio = System.currentTimeMillis();
     }
     
+    /**
+     * Pega o tempo atual do sistema em milissegundos
+     * @return a diferença entre a variavel inicio e o tempo atual do sistema.
+     */
     public static long fim(){
         return (System.currentTimeMillis())-inicio;
     }
